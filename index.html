@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: url("background.png") center center / cover fixed;
+            color: #222;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            text-align: center;
+            padding: 50px 25px;
+            background: rgba(255, 255, 255, 0.877);
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* PROFILE IMAGE */
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-image img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .header p {
+            font-size: 20px;
+            color: #667;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            background: rgba(255, 255, 255, 0.877);
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #34495e;
+            border-left: 5px solid #7f8c8d;
+            padding-left: 12px;
+        }
+
+        .content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            min-height: 100px;
+        }
+
+        .placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+
+        /* =========================
+           INTEREST CARDS
+        ========================= */
+
+        .interest-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .interest-card {
+            padding: 25px;
+            background: #f7f9fb;
+            border-radius: 15px;
+            text-align: center;
+            min-height: 150px;
+        }
+
+        .interest-card h3 {
+            margin-bottom: 12px;
+            color: #34495e;
+        }
+
+        .interest-card p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           STRENGTHS
+        ========================= */
+
+        .strengths {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .strength {
+            padding: 20px;
+            background: #f7f9fb;
+            border-radius: 12px;
+            min-height: 100px;
+        }
+
+        .strength h3 {
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        .strength p {
+            color: #777;
+        }
+
+
+        /* =========================
+           GOALS
+        ========================= */
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .goal {
+            padding: 25px;
+            background: #f7f9fb;
+            border-radius: 15px;
+            min-height: 150px;
+        }
+
+        .goal h3 {
+            margin-bottom: 12px;
+            color: #34495e;
+        }
+
+        .goal p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           FUN FACTS
+        ========================= */
+
+        .facts {
+            padding-left: 20px;
+        }
+
+        .facts li {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           MY THOUGHTS
+        ========================= */
+
+        .thought {
+            text-align: center;
+            padding: 35px 20px;
+            background: #f7f9fb;
+            border-radius: 15px;
+        }
+
+        .thought p {
+            font-size: 22px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #555;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+            padding: 35px;
+            color: #777;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 35px 20px;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 17px;
+            }
+
+            .profile-image img {
+                width: 170px;
+                height: 170px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .interest-container,
+            .strengths,
+            .goals {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+
+            .thought p {
+                font-size: 19px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =========================
+         INTRODUCTION
+    ========================= -->
+
+        <div class="header">
+
+            <!-- YOUR PHOTO -->
+
+            <div class="profile-image">
+
+                <img src="profile.png" alt="My Photo">
+
+            </div>
+
+
+            <h1>About Me</h1>
+
+            <p>
+                A little glimpse into who I am...
+            </p>
+
+
+            <!-- WRITE YOUR NAME / INTRODUCTION HERE -->
+
+            <p class="placeholder">
+                [ Here with you is "HASAN" ]
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+         ABOUT ME
+    ========================= -->
+
+        <section class="section">
+
+            <h2>About Me</h2>
+
+            <div class="content">
+
+                <p class="placeholder">
+                    [ Write about yourself here. Talk about who you are,
+                    your personality, the way you think, and what makes you,
+                    YOU. ]
+                </p>
+
+                <br>
+
+                <p class="placeholder">
+                    [ You can add more paragraphs here... ]
+                </p>
+
+                <br>
+
+                <p class="placeholder">
+                    [ “Confidence in silence, strength in character, and fire in purpose.” ]
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         MY INTERESTS
+    ========================= -->
+
+        <section class="section">
+
+            <h2>My Interests</h2>
+
+            <div class="interest-container">
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 01</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 02</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 03</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 04</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 05</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>Interest 06</h3>
+
+                    <p class="placeholder">
+                        [ Write your interest here ]
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         MY STRENGTHS
+    ========================= -->
+
+        <section class="section">
+
+            <h2>My Strengths</h2>
+
+            <div class="strengths">
+
+
+                <div class="strength">
+
+                    <h3>Strength 01</h3>
+
+                    <p class="placeholder">
+                        [ Write about one of your strengths ]
+                    </p>
+
+                </div>
+
+
+                <div class="strength">
+
+                    <h3>Strength 02</h3>
+
+                    <p class="placeholder">
+                        [ Write about one of your strengths ]
+                    </p>
+
+                </div>
+
+
+                <div class="strength">
+
+                    <h3>Strength 03</h3>
+
+                    <p class="placeholder">
+                        [ Write about one of your strengths ]
+                    </p>
+
+                </div>
+
+
+                <div class="strength">
+
+                    <h3>Strength 04</h3>
+
+                    <p class="placeholder">
+                        [ Write about one of your strengths ]
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         MY GOALS & DREAMS
+    ========================= -->
+
+        <section class="section">
+
+            <h2>My Goals & Dreams</h2>
+
+            <div class="goals">
+
+
+                <div class="goal">
+
+                    <h3>My Goals</h3>
+
+                    <p class="placeholder">
+                        [ Write about your goals here... ]
+                    </p>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <h3>My Dreams</h3>
+
+                    <p class="placeholder">
+                        [ Write about your dreams here... ]
+                    </p>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <h3>What I Want To Achieve</h3>
+
+                    <p class="placeholder">
+                        [ Write what you want to achieve in life... ]
+                    </p>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <h3>Where I See Myself</h3>
+
+                    <p class="placeholder">
+                        [ Write about where you see yourself in the future... ]
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         A FEW THINGS ABOUT ME
+    ========================= -->
+
+        <section class="section">
+
+            <h2>A Few Things About Me</h2>
+
+            <ul class="facts">
+
+                <li class="placeholder">
+                    [ Write a fun fact about yourself ]
+                </li>
+
+                <li class="placeholder">
+                    [ Write another interesting thing about yourself ]
+                </li>
+
+                <li class="placeholder">
+                    [ Write something unique about yourself ]
+                </li>
+
+                <li class="placeholder">
+                    [ Add another fact here ]
+                </li>
+
+                <li class="placeholder">
+                    [ Add as many as you want ]
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- =========================
+         MY THOUGHTS
+    ========================= -->
+
+        <section class="section">
+
+            <h2>My Thoughts</h2>
+
+            <div class="thought">
+
+                <p class="placeholder">
+                    "[ Write a quote, belief, philosophy,
+                    or thought that represents you ]"
+                </p>
+
+                <br>
+
+                <p class="placeholder">
+                    — [ Your Name ]
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         A LITTLE MORE ABOUT ME
+    ========================= -->
+
+        <section class="section">
+
+            <h2>A Little More About Me...</h2>
+
+            <div class="content">
+
+                <p class="placeholder">
+                    [ This is your final space. Write anything else
+                    you want people to know about you. It could be
+                    something personal, meaningful, funny, or simply
+                    something that describes you. ]
+                </p>
+
+                <br><br>
+
+                <p class="placeholder">
+                    [ You can add more paragraphs here whenever you want. ]
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         FOOTER
+    ========================= -->
+
+        <div class="footer">
+
+            <p>
+                That's a little glimpse of who I am.
+            </p>
+
+            <br>
+
+            <p class="placeholder">
+                [ You can change this line too ]
+            </p>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
